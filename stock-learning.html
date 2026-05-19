@@ -120,37 +120,187 @@
 
         <!-- 学习阶段 -->
         <div class="space-y-6">
-            {% for stage in data.stages %}
-            <div class="card rounded-2xl overflow-hidden">
-                <div class="bg-gradient-to-r from-cyan-900/50 to-blue-900/50 p-5 border-b border-gray-700">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <h3 class="text-xl font-bold">阶段 {{ stage.id }}：{{ stage.name.split('：')[1] }}</h3>
-                            <p class="text-gray-400 text-sm mt-1">{{ stage.description }}</p>
-                        </div>
-                        <span class="text-cyan-400 font-mono text-lg">
-                            {{ stage.tasks|selectattr('done')|list|length }}/{{ stage.tasks|length }}
-                        </span>
-                    </div>
+            
+    <div class="card rounded-2xl overflow-hidden">
+        <div class="bg-gradient-to-r from-cyan-900/50 to-blue-900/50 p-5 border-b border-gray-700">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h3 class="text-xl font-bold">阶段 1：基础扫盲（1-2周）</h3>
+                    <p class="text-gray-400 text-sm mt-1">搞懂基本概念，不被术语忽悠</p>
                 </div>
-                <div class="p-5 space-y-3">
-                    {% for task in stage.tasks %}
-                    <div class="task-item flex items-center gap-4 p-3 rounded-xl {% if task.done %}task-done{% endif %}" data-task-id="{{ task.id }}">
-                        <div class="checkbox-custom" onclick="toggleTask('{{ task.id }}')">
-                            {% if task.done %}
-                            <i class="fas fa-check-circle text-green-400 text-xl"></i>
-                            {% else %}
-                            <i class="far fa-circle text-gray-500 text-xl"></i>
-                            {% endif %}
-                        </div>
-                        <span class="flex-1">{{ task.name }}</span>
-                        {% if task.link %}
-                        <a href="{{ task.link }}" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        {% endif %}
-                    </div>
-                    {% endfor %}
+                <span class="text-cyan-400 font-mono text-lg">
+                    0/6
+                </span>
+            </div>
+        </div>
+        <div class="p-5 space-y-3">
+            
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="1-1">
+                <div class="checkbox-custom" onclick="toggleTask('1-1')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">学习K线、成交量、均线基本概念</span>
+                <a href="https://www.bilibili.com/video/BV1Wx411c7s8/" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="1-2">
+                <div class="checkbox-custom" onclick="toggleTask('1-2')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">了解A股交易规则（T+1、涨跌停、手续费）</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="1-3">
+                <div class="checkbox-custom" onclick="toggleTask('1-3')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">理解PE、ROE等基础财务指标</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="1-4">
+                <div class="checkbox-custom" onclick="toggleTask('1-4')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">开通东方财富/同花顺模拟盘</span>
+                <a href="https://www.eastmoney.com/" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="1-5">
+                <div class="checkbox-custom" onclick="toggleTask('1-5')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">模拟盘操作5次以上</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="1-6">
+                <div class="checkbox-custom" onclick="toggleTask('1-6')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">阅读《小狗钱钱》建立理财思维</span>
+                
+            </div>
+        </div>
+    </div>
+    <div class="card rounded-2xl overflow-hidden">
+        <div class="bg-gradient-to-r from-cyan-900/50 to-blue-900/50 p-5 border-b border-gray-700">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h3 class="text-xl font-bold">阶段 2：建立认知（2-4周）</h3>
+                    <p class="text-gray-400 text-sm mt-1">建立自己的判断逻辑，不跟风</p>
+                </div>
+                <span class="text-cyan-400 font-mono text-lg">
+                    0/6
+                </span>
+            </div>
+        </div>
+        <div class="p-5 space-y-3">
+            
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="2-1">
+                <div class="checkbox-custom" onclick="toggleTask('2-1')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">学习价值投资基础（好公司判断标准）</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="2-2">
+                <div class="checkbox-custom" onclick="toggleTask('2-2')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">学习技术分析基础（支撑位、压力位、趋势线）</span>
+                <a href="https://www.bilibili.com/video/BV1nE411d7zG/" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="2-3">
+                <div class="checkbox-custom" onclick="toggleTask('2-3')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">开通A股证券账户</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="2-4">
+                <div class="checkbox-custom" onclick="toggleTask('2-4')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">入金3000元，购买第一只ETF</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="2-5">
+                <div class="checkbox-custom" onclick="toggleTask('2-5')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">记录每笔交易的买卖理由</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="2-6">
+                <div class="checkbox-custom" onclick="toggleTask('2-6')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">阅读《日本蜡烛图技术》</span>
+                
+            </div>
+        </div>
+    </div>
+    <div class="card rounded-2xl overflow-hidden">
+        <div class="bg-gradient-to-r from-cyan-900/50 to-blue-900/50 p-5 border-b border-gray-700">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h3 class="text-xl font-bold">阶段 3：形成策略（1-3个月）</h3>
+                    <p class="text-gray-400 text-sm mt-1">找到适合小资金的稳定策略</p>
+                </div>
+                <span class="text-cyan-400 font-mono text-lg">
+                    0/6
+                </span>
+            </div>
+        </div>
+        <div class="p-5 space-y-3">
+            
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="3-1">
+                <div class="checkbox-custom" onclick="toggleTask('3-1')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">学习ETF定投策略并实践</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="3-2">
+                <div class="checkbox-custom" onclick="toggleTask('3-2')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">尝试龙头股逢低买入策略</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="3-3">
+                <div class="checkbox-custom" onclick="toggleTask('3-3')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">学习网格交易策略</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="3-4">
+                <div class="checkbox-custom" onclick="toggleTask('3-4')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">完成10笔以上真实交易</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="3-5">
+                <div class="checkbox-custom" onclick="toggleTask('3-5')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">总结适合自己的交易方法</span>
+                
+            </div>
+            <div class="task-item flex items-center gap-4 p-3 rounded-xl " data-task-id="3-6">
+                <div class="checkbox-custom" onclick="toggleTask('3-6')">
+                    <i class="far fa-circle text-gray-500 text-xl"></i>
+                </div>
+                <span class="flex-1">逐步加大资金到1-2w</span>
+                
+            </div>
+        </div>
+    </div>
                 </div>
             </div>
             {% endfor %}
@@ -162,13 +312,27 @@
                 <i class="fas fa-coins text-yellow-400 mr-2"></i>推荐ETF（新手首选）
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {% for etf in data.etf_list %}
-                <div class="bg-gray-800/50 rounded-xl p-4 text-center hover:bg-gray-700/50 transition">
-                    <div class="text-xl font-bold text-yellow-400 font-mono">{{ etf.code }}</div>
-                    <div class="text-gray-200">{{ etf.name }}</div>
-                    <div class="text-xs text-gray-500 mt-1">{{ etf.desc }}</div>
-                </div>
-                {% endfor %}
+                
+        <div class="bg-gray-800/50 rounded-xl p-4 text-center hover:bg-gray-700/50 transition">
+            <div class="text-xl font-bold text-yellow-400 font-mono">510300</div>
+            <div class="text-gray-200">沪深300ETF</div>
+            <div class="text-xs text-gray-500 mt-1">跟踪大盘蓝筹股</div>
+        </div>
+        <div class="bg-gray-800/50 rounded-xl p-4 text-center hover:bg-gray-700/50 transition">
+            <div class="text-xl font-bold text-yellow-400 font-mono">159915</div>
+            <div class="text-gray-200">创业板ETF</div>
+            <div class="text-xs text-gray-500 mt-1">跟踪创业板指数</div>
+        </div>
+        <div class="bg-gray-800/50 rounded-xl p-4 text-center hover:bg-gray-700/50 transition">
+            <div class="text-xl font-bold text-yellow-400 font-mono">510500</div>
+            <div class="text-gray-200">中证500ETF</div>
+            <div class="text-xs text-gray-500 mt-1">跟踪中小盘股</div>
+        </div>
+        <div class="bg-gray-800/50 rounded-xl p-4 text-center hover:bg-gray-700/50 transition">
+            <div class="text-xl font-bold text-yellow-400 font-mono">510180</div>
+            <div class="text-gray-200">上证180ETF</div>
+            <div class="text-xs text-gray-500 mt-1">跟踪上证180指数</div>
+        </div>
             </div>
         </div>
 
@@ -178,17 +342,70 @@
                 <i class="fas fa-book text-cyan-400 mr-2"></i>学习资源
             </h2>
             <div class="grid md:grid-cols-2 gap-3">
-                {% for res in data.resources %}
-                <a href="{{ res.url }}" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-gray-800/30 border border-gray-700/50">
-                    <div class="w-10 h-10 rounded-full bg-cyan-900/50 flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-link text-cyan-400"></i>
-                    </div>
-                    <div>
-                        <div class="font-medium">{{ res.name }}</div>
-                        <div class="text-sm text-gray-500">{{ res.desc }}</div>
-                    </div>
-                </a>
-                {% endfor %}
+                
+        <a href="https://search.bilibili.com/all?keyword=%E6%9D%8E%E6%B0%B8%E4%B9%90%20%E8%82%A1%E7%A5%A8" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-gray-800/50 border border-gray-700/50">
+            <div class="w-10 h-10 rounded-full bg-cyan-900/50 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-link text-cyan-400"></i>
+            </div>
+            <div>
+                <div class="font-medium">B站 - 李永乐老师股票相关视频</div>
+                <div class="text-sm text-gray-500">通俗易懂的金融知识科普</div>
+            </div>
+        </a>
+        <a href="https://www.eastmoney.com/" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-gray-800/50 border border-gray-700/50">
+            <div class="w-10 h-10 rounded-full bg-cyan-900/50 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-link text-cyan-400"></i>
+            </div>
+            <div>
+                <div class="font-medium">东方财富网</div>
+                <div class="text-sm text-gray-500">行情、资讯、模拟盘</div>
+            </div>
+        </a>
+        <a href="https://xueqiu.com/" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-gray-800/50 border border-gray-700/50">
+            <div class="w-10 h-10 rounded-full bg-cyan-900/50 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-link text-cyan-400"></i>
+            </div>
+            <div>
+                <div class="font-medium">雪球</div>
+                <div class="text-sm text-gray-500">投资者交流社区</div>
+            </div>
+        </a>
+        <a href="https://www.lixinger.com/" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-gray-800/50 border border-gray-700/50">
+            <div class="w-10 h-10 rounded-full bg-cyan-900/50 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-link text-cyan-400"></i>
+            </div>
+            <div>
+                <div class="font-medium">理杏仁</div>
+                <div class="text-sm text-gray-500">基本面数据查询</div>
+            </div>
+        </a>
+        <a href="https://wglh.com/" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-gray-800/50 border border-gray-700/50">
+            <div class="w-10 h-10 rounded-full bg-cyan-900/50 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-link text-cyan-400"></i>
+            </div>
+            <div>
+                <div class="font-medium">乌龟量化</div>
+                <div class="text-sm text-gray-500">量化数据和回测工具</div>
+            </div>
+        </a>
+        <a href="https://github.com/akfamily/akshare" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-gray-800/50 border border-gray-700/50">
+            <div class="w-10 h-10 rounded-full bg-cyan-900/50 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-link text-cyan-400"></i>
+            </div>
+            <div>
+                <div class="font-medium">AkShare - 开源财经数据接口</div>
+                <div class="text-sm text-gray-500">Python免费A股数据</div>
+            </div>
+        </a>
+        <a href="https://www.10jqka.com.cn/" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-gray-800/50 border border-gray-700/50">
+            <div class="w-10 h-10 rounded-full bg-cyan-900/50 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-link text-cyan-400"></i>
+            </div>
+            <div>
+                <div class="font-medium">同花顺官网</div>
+                <div class="text-sm text-gray-500">行情软件和资讯</div>
+            </div>
+        </a>
             </div>
         </div>
 
@@ -301,44 +518,5 @@ function resetProgress() {
 document.addEventListener('DOMContentLoaded', loadProgress);
 </script>
 
-<script>
-        // 初始化显示
-        function toggleTask(taskId) {
-            fetch('/api/toggle', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ task_id: taskId })
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    location.reload();
-                }
-            });
-        }
-
-        // 重置进度
-        function resetProgress() {
-            if (confirm('确定要重置所有学习进度吗？')) {
-                fetch('/api/reset', { method: 'POST' })
-                .then(() => location.reload());
-            }
-        }
-
-        // 计算并显示进度
-        function updateProgress() {
-            fetch('/api/progress')
-                .then(res => res.json())
-                .then(data => {
-                    document.getElementById('progress-bar').style.width = data.percent + '%';
-                    document.getElementById('progress-text').textContent = data.percent + '%';
-                    document.getElementById('done-count').textContent = data.done;
-                    document.getElementById('total-count').textContent = data.total;
-                });
-        }
-
-        // 初始化
-        updateProgress();
-    </script>
 </body>
 </html>
